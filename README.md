@@ -109,7 +109,7 @@ Los recursos de terceros utilizados (imágenes, audio y vídeo) están registrad
 
 Todo el material cumple con las licencias de uso correspondientes (Freepik, Unsplash).
 
-[📖 Ver memoria del proyecto](memoria_drumstore.pdf)
+[📖 Ver memoria del proyecto](memoria_drumstore_.pdf)
 
 ---
 
