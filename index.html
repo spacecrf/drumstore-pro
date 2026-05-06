@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>DrumStore Pro · Tienda online de baterías y percusión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="DrumStore Pro es tu tienda online de baterías acústicas y electrónicas, platos, baquetas y accesorios de percusión para músicos principiantes y profesionales.">
+    <meta name="keywords" content="baterías acústicas,baterías electrónicas,platos,baquetas,percusión,tienda online">
+    <link rel="canonical" href="https://www.ejemplo.com/">
+    <meta property="og:title" content="DrumStore Pro · Tienda online de baterías y percusión">
+    <meta property="og:description" content="Explora baterías acústicas y electrónicas, platos y accesorios con demos de audio y vídeo.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="img/favicon-64.png" sizes="64x64" type="image/png">
+    <link rel="apple-touch-icon" href="img/favicon-64.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/custom.min.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MusicStore",
+      "name": "DrumStore Pro",
+      "url": "https://www.ejemplo.com/",
+      "description": "Tienda online de baterías y percusión con demos de audio y vídeo.",
+      "address": { "@type": "PostalAddress", "addressCountry": "ES" }
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip link accesibilidad -->
+    <a class="visually-hidden-focusable" href="#main-content">Saltar al contenido principal</a>
+
+    <!-- ======= NAVBAR ======= -->
+    <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm" role="banner">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#hero" aria-label="DrumStore Pro - Inicio">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <circle cx="12" cy="12" r="10" fill="#ff6b35"></circle>
+                    <rect x="6" y="11" width="12" height="2" fill="#111827"></rect>
+                    <rect x="11" y="4" width="2" height="7" fill="#111827"></rect>
+                </svg>
+                <span class="fw-bold">DrumStore Pro</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+                aria-controls="mainNav" aria-expanded="false" aria-label="Mostrar u ocultar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="collapse navbar-collapse" id="mainNav" aria-label="Navegación principal">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#catalogo">Catálogo</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#categorias" id="dropdownCategorias"
+                           role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorías</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownCategorias">
+                            <li><a class="dropdown-item" href="#baterias-acusticas">Baterías acústicas</a></li>
+                            <li><a class="dropdown-item" href="#baterias-electronicas">Baterías electrónicas</a></li>
+                            <li><a class="dropdown-item" href="#platos">Platos</a></li>
+                            <li><a class="dropdown-item" href="#accesorios">Baquetas y accesorios</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#demo-multimedia">Demos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonios">Opiniones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-3" role="search" aria-label="Buscar productos">
+                    <label class="visually-hidden" for="search-input">Buscar en DrumStore Pro</label>
+                    <input id="search-input" class="form-control form-control-sm me-2" type="search"
+                           placeholder="Buscar baterías, platos..." aria-label="Buscar">
+                    <button class="btn btn-outline-light btn-sm" type="submit">
+                        <i class="bi bi-search" aria-hidden="true"></i>
+                        <span class="visually-hidden">Buscar</span>
+                    </button>
+                </form>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-outline-light btn-sm position-relative" type="button"
+                            aria-label="Ver carrito de compra" data-bs-toggle="modal" data-bs-target="#modalCarrito"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ver carrito">
+                        <i class="bi bi-cart3" aria-hidden="true"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark" id="cart-count">0</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="pt-5">
+
+        <!-- ======= HERO ======= -->
+        <section id="hero" class="hero-section text-light" aria-labelledby="hero-heading">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <p class="hero-kicker text-uppercase mb-2">Tienda online de baterías y percusión</p>
+                        <h1 id="hero-heading" class="hero-title mb-3">El groove de tu estudio empieza en DrumStore Pro</h1>
+                        <p class="lead text-light-emphasis mb-4">
+                            Baterías acústicas y electrónicas, platos, baquetas y accesorios seleccionados para músicos
+                            que quieren sonar como en directo, desde el primer ensayo.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3 mb-4 btn-group-hero">
+                            <a class="btn btn-primary btn-lg" href="#catalogo">Ver catálogo</a>
+                            <button class="btn btn-outline-light btn-lg" type="button"
+                                    data-bs-toggle="modal" data-bs-target="#modalAsesor">
+                                Asesoramiento para principiantes
+                            </button>
+                        </div>
+                        <div class="d-flex flex-wrap gap-4 hero-highlights" aria-label="Datos destacados de DrumStore Pro">
+                            <div><div class="h4 mb-0">+120</div><div class="small text-light-emphasis">Kits de batería</div></div>
+                            <div><div class="h4 mb-0">+80</div><div class="small text-light-emphasis">Platos y sets</div></div>
+                            <div><div class="h4 mb-0">24/7</div><div class="small text-light-emphasis">Soporte online</div></div>
+                            <div><div class="h4 mb-0">+500</div><div class="small text-light-emphasis">Clientes felices</div></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel"
+                             aria-label="Productos destacados DrumStore Pro">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0"
+                                        class="active" aria-current="true" aria-label="Kit acústico para principiantes"></button>
+                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
+                                        aria-label="Batería electrónica compacta"></button>
+                                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"
+                                        aria-label="Set de platos profesionales"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <picture>
+                                        <source srcset="img/hero-acustica.webp" type="image/webp">
+                                        <img src="img/hero-acustica.jpg" class="d-block w-100"
+                                             alt="Kit de batería acústica en estudio de grabación" loading="eager">
+                                    </picture>
+                                    <div class="carousel-caption d-none d-md-block text-start">
+                                        <h2 class="h4">Kit acústico para principiantes</h2>
+                                        <p>Casco de abedul, herrajes incluidos y set de platos para empezar a tocar hoy.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <picture>
+                                        <source srcset="img/hero-electronica.webp" type="image/webp">
+                                        <img src="img/hero-electronica.jpg" class="d-block w-100"
+                                             alt="Batería electrónica compacta en habitación de ensayo" loading="lazy">
+                                    </picture>
+                                    <div class="carousel-caption d-none d-md-block text-start">
+                                        <h2 class="h4">Batería electrónica compacta</h2>
+                                        <p>Pads silenciosos y conexión a auriculares para ensayar sin molestar.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <picture>
+                                        <source srcset="img/hero-platos.webp" type="image/webp">
+                                        <img src="img/hero-platos.jpg" class="d-block w-100"
+                                             alt="Juego de platos de batería de bronce sobre escenario" loading="lazy">
+                                    </picture>
+                                    <div class="carousel-caption d-none d-md-block text-start">
+                                        <h2 class="h4">Set de platos para directo</h2>
+                                        <p>Respuesta brillante y definida para estilos rock, pop y metal.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Siguiente</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banda separadora animada -->
+        <div class="divider-band" aria-hidden="true"></div>
+
+        <!-- ======= CATÁLOGO ======= -->
+        <section id="catalogo" class="py-5 bg-body-tertiary" aria-labelledby="catalogo-heading">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+                    <div>
+                        <h2 id="catalogo-heading" class="h3 mb-1">Catálogo DrumStore Pro</h2>
+                        <p class="mb-0 text-body-secondary">Filtra por tipo de batería, nivel y rango de precio.</p>
+                    </div>
+                    <div class="d-flex flex-wrap align-items-center gap-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <label class="form-label mb-0 small" for="precio-slider">Precio máximo</label>
+                            <input type="range" class="form-range" id="precio-slider"
+                                   min="0" max="2000" step="100"
+                                   aria-valuemin="0" aria-valuemax="2000" aria-valuenow="2000"
+                                   aria-label="Filtrar por precio máximo">
+                            <span class="badge text-bg-dark" id="precio-slider-value">Hasta 2000 €</span>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Filtrar por nivel">
+                            <input type="radio" class="btn-check" name="nivel" id="nivel-todos" autocomplete="off" checked>
+                            <label class="btn btn-outline-dark btn-sm" for="nivel-todos">Todos</label>
+                            <input type="radio" class="btn-check" name="nivel" id="nivel-inicio" autocomplete="off">
+                            <label class="btn btn-outline-dark btn-sm" for="nivel-inicio">Inicio</label>
+                            <input type="radio" class="btn-check" name="nivel" id="nivel-avanzado" autocomplete="off">
+                            <label class="btn btn-outline-dark btn-sm" for="nivel-avanzado">Avanzado</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs del catálogo -->
+                <ul class="nav nav-tabs" id="catalogoTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="tab-acusticas" data-bs-toggle="tab"
+                                data-bs-target="#panel-acusticas" type="button" role="tab"
+                                aria-controls="panel-acusticas" aria-selected="true">
+                            <i class="bi bi-music-note-beamed me-1" aria-hidden="true"></i>Baterías acústicas
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tab-electronicas" data-bs-toggle="tab"
+                                data-bs-target="#panel-electronicas" type="button" role="tab"
+                                aria-controls="panel-electronicas" aria-selected="false">
+                            <i class="bi bi-lightning-charge me-1" aria-hidden="true"></i>Baterías electrónicas
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tab-platos" data-bs-toggle="tab"
+                                data-bs-target="#panel-platos" type="button" role="tab"
+                                aria-controls="panel-platos" aria-selected="false">
+                            <i class="bi bi-disc me-1" aria-hidden="true"></i>Platos
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tab-accesorios" data-bs-toggle="tab"
+                                data-bs-target="#panel-accesorios" type="button" role="tab"
+                                aria-controls="panel-accesorios" aria-selected="false">
+                            <i class="bi bi-tools me-1" aria-hidden="true"></i>Baquetas y accesorios
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content pt-4" id="catalogoTabsContent">
+
+                    <!-- Tab: Acústicas -->
+                    <div class="tab-pane fade show active" id="panel-acusticas" role="tabpanel" aria-labelledby="tab-acusticas">
+                        <div class="row g-4" id="baterias-acusticas">
+                            <!-- Producto 1 -->
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 producto-card" data-nivel="inicio" data-precio="699">
+                                    <picture>
+                                        <source srcset="img/prod-acustica-01.webp" type="image/webp">
+                                        <img src="img/prod-acustica-01.jpg" class="card-img-top"
+                                             alt="Kit de batería acústica básica en acabado negro" loading="lazy">
+                                    </picture>
+                                    <div class="card-body d-flex flex-column">
+                                        <h3 class="h5 card-title">Starter Groove 5 piezas</h3>
+                                        <p class="card-text text-body-secondary flex-grow-1">Kit de iniciación con cascos de tilo, pedal simple y set de platos básico. Ideal para principiantes.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <p class="fw-bold mb-0 text-primary">699 €</p>
+                                            <span class="badge text-bg-secondary">Nivel inicio</span>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button type="button" class="btn btn-primary flex-grow-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modalProducto"
+                                                    data-producto="Starter Groove 5 piezas" data-precio="699"
+                                                    data-desc="Kit de iniciación con cascos de tilo, pedal simple y set de platos básico."
+                                                    data-nivel="Inicio">
+                                                Ver detalles
+                                            </button>
+                                            <button type="button" class="btn btn-outline-secondary btn-icon add-to-cart"
+                                                    data-producto="Starter Groove 5 piezas" data-precio="699"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir al carrito"
+                                                    aria-label="Añadir Starter Groove al carrito">
+                                                <i class="bi bi-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <!-- Producto 2 -->
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 producto-card" data-nivel="avanzado" data-precio="1499">
+                                    <picture>
+                                        <source srcset="img/prod-acustica-02.webp" type="image/webp">
+                                        <img src="img/prod-acustica-02.jpg" class="card-img-top"
+                                             alt="Kit de batería acústica profesional Stage Maple" loading="lazy">
+                                    </picture>
+                                    <div class="card-body d-flex flex-column">
+                                        <h3 class="h5 card-title">Stage Maple Pro</h3>
+                                        <p class="card-text text-body-secondary flex-grow-1">Casco de arce, herrajes de gama alta y set de platos profesionales para directo.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <p class="fw-bold mb-0 text-primary">1.499 €</p>
+                                            <span class="badge text-bg-dark">Nivel avanzado</span>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button type="button" class="btn btn-primary flex-grow-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modalProducto"
+                                                    data-producto="Stage Maple Pro" data-precio="1499"
+                                                    data-desc="Casco de arce, herrajes de gama alta y platos profesionales."
+                                                    data-nivel="Avanzado">
+                                                Ver detalles
+                                            </button>
+                                            <button type="button" class="btn btn-outline-secondary btn-icon add-to-cart"
+                                                    data-producto="Stage Maple Pro" data-precio="1499"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir al carrito"
+                                                    aria-label="Añadir Stage Maple Pro al carrito">
+                                                <i class="bi bi-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <!-- Producto 3 (nuevo) -->
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 producto-card" data-nivel="inicio" data-precio="899">
+                                    <picture>
+                                        <source srcset="img/prod-acustica-01.webp" type="image/webp">
+                                        <img src="img/prod-acustica-01.jpg" class="card-img-top"
+                                             alt="Kit de batería acústica Junior Series en rojo" loading="lazy">
+                                    </picture>
+                                    <div class="card-body d-flex flex-column">
+                                        <span class="badge text-bg-warning mb-2 align-self-start">Novedad</span>
+                                        <h3 class="h5 card-title">Junior Series Birch</h3>
+                                        <p class="card-text text-body-secondary flex-grow-1">Cascos de abedul en acabado brillante, perfectos para jóvenes músicos en formación.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <p class="fw-bold mb-0 text-primary">899 €</p>
+                                            <span class="badge text-bg-secondary">Nivel inicio</span>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button type="button" class="btn btn-primary flex-grow-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modalProducto"
+                                                    data-producto="Junior Series Birch" data-precio="899"
+                                                    data-desc="Cascos de abedul en acabado brillante para jóvenes bateristas."
+                                                    data-nivel="Inicio">
+                                                Ver detalles
+                                            </button>
+                                            <button type="button" class="btn btn-outline-secondary btn-icon add-to-cart"
+                                                    data-producto="Junior Series Birch" data-precio="899"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir al carrito"
+                                                    aria-label="Añadir Junior Series Birch al carrito">
+                                                <i class="bi bi-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Electrónicas -->
+                    <div class="tab-pane fade" id="panel-electronicas" role="tabpanel" aria-labelledby="tab-electronicas">
+                        <div class="row g-4" id="baterias-electronicas">
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 producto-card" data-nivel="inicio" data-precio="599">
+                                    <picture>
+                                        <source srcset="img/prod-electronica-01.webp" type="image/webp">
+                                        <img src="img/prod-electronica-01.jpg" class="card-img-top"
+                                             alt="Batería electrónica compacta con pads de goma" loading="lazy">
+                                    </picture>
+                                    <div class="card-body d-flex flex-column">
+                                        <h3 class="h5 card-title">E-Drum Compact</h3>
+                                        <p class="card-text text-body-secondary flex-grow-1">Kit electrónico compacto con conexión USB y entrada de auriculares. Silencioso y versátil.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <p class="fw-bold mb-0 text-primary">599 €</p>
+                                            <span class="badge text-bg-secondary">Nivel inicio</span>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button type="button" class="btn btn-primary flex-grow-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modalProducto"
+                                                    data-producto="E-Drum Compact" data-precio="599"
+                                                    data-desc="Kit electrónico compacto con USB y auriculares."
+                                                    data-nivel="Inicio">Ver detalles</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-icon add-to-cart"
+                                                    data-producto="E-Drum Compact" data-precio="599"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir al carrito"
+                                                    aria-label="Añadir E-Drum Compact al carrito">
+                                                <i class="bi bi-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 producto-card" data-nivel="avanzado" data-precio="1199">
+                                    <picture>
+                                        <source srcset="img/prod-electronica-01.webp" type="image/webp">
+                                        <img src="img/prod-electronica-01.jpg" class="card-img-top"
+                                             alt="Batería electrónica profesional con pads de malla" loading="lazy">
+                                    </picture>
+                                    <div class="card-body d-flex flex-column">
+                                        <h3 class="h5 card-title">E-Drum Mesh Pro</h3>
+                                        <p class="card-text text-body-secondary flex-grow-1">Pads de malla de doble capa con respuesta natural. Módulo con 700 sonidos y conexión Bluetooth.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <p class="fw-bold mb-0 text-primary">1.199 €</p>
+                                            <span class="badge text-bg-dark">Nivel avanzado</span>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button type="button" class="btn btn-primary flex-grow-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modalProducto"
+                                                    data-producto="E-Drum Mesh Pro" data-precio="1199"
+                                                    data-desc="Pads de malla doble capa y 700 sonidos con Bluetooth."
+                                                    data-nivel="Avanzado">Ver detalles</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-icon add-to-cart"
+                                                    data-producto="E-Drum Mesh Pro" data-precio="1199"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir al carrito"
+                                                    aria-label="Añadir E-Drum Mesh Pro al carrito">
+                                                <i class="bi bi-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Platos -->
+                    <div class="tab-pane fade" id="panel-platos" role="tabpanel" aria-labelledby="tab-platos">
+                        <div class="row g-4" id="platos">
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 producto-card" data-nivel="avanzado" data-precio="399">
+                                    <picture>
+                                        <source srcset="img/prod-platos-01.webp" type="image/webp">
+                                        <img src="img/prod-platos-01.jpg" class="card-img-top"
+                                             alt="Juego de platos brillantes Rock Bronze Pack montados en batería" loading="lazy">
+                                    </picture>
+                                    <div class="card-body d-flex flex-column">
+                                        <h3 class="h5 card-title">Rock Bronze Pack</h3>
+                                        <p class="card-text text-body-secondary flex-grow-1">Crash, ride y hi-hat de bronce B20 con respuesta agresiva para rock y metal.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <p class="fw-bold mb-0 text-primary">399 €</p>
+                                            <span class="badge text-bg-dark">Nivel avanzado</span>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button type="button" class="btn btn-primary flex-grow-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modalProducto"
+                                                    data-producto="Rock Bronze Pack" data-precio="399"
+                                                    data-desc="Crash, ride y hi-hat B20 para rock y metal."
+                                                    data-nivel="Avanzado">Ver detalles</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-icon add-to-cart"
+                                                    data-producto="Rock Bronze Pack" data-precio="399"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir al carrito"
+                                                    aria-label="Añadir Rock Bronze Pack al carrito">
+                                                <i class="bi bi-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 producto-card" data-nivel="inicio" data-precio="199">
+                                    <picture>
+                                        <source srcset="img/prod-platos-01.webp" type="image/webp">
+                                        <img src="img/prod-platos-01.jpg" class="card-img-top"
+                                             alt="Set de platos Jazz Series de latón para principiantes" loading="lazy">
+                                    </picture>
+                                    <div class="card-body d-flex flex-column">
+                                        <h3 class="h5 card-title">Jazz Series Brass</h3>
+                                        <p class="card-text text-body-secondary flex-grow-1">Set de platos de latón con sonido cálido y suave, pensados para jazz, funk y pop.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <p class="fw-bold mb-0 text-primary">199 €</p>
+                                            <span class="badge text-bg-secondary">Nivel inicio</span>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button type="button" class="btn btn-primary flex-grow-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modalProducto"
+                                                    data-producto="Jazz Series Brass" data-precio="199"
+                                                    data-desc="Platos de latón cálidos para jazz, funk y pop."
+                                                    data-nivel="Inicio">Ver detalles</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-icon add-to-cart"
+                                                    data-producto="Jazz Series Brass" data-precio="199"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir al carrito"
+                                                    aria-label="Añadir Jazz Series Brass al carrito">
+                                                <i class="bi bi-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab: Accesorios -->
+                    <div class="tab-pane fade" id="panel-accesorios" role="tabpanel" aria-labelledby="tab-accesorios">
+                        <div class="row g-4" id="accesorios">
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 producto-card" data-nivel="todos" data-precio="19">
+                                    <picture>
+                                        <source srcset="img/prod-baquetas-01.webp" type="image/webp">
+                                        <img src="img/prod-baquetas-01.jpg" class="card-img-top"
+                                             alt="Par de baquetas de madera de arce 5A sobre caja de batería" loading="lazy">
+                                    </picture>
+                                    <div class="card-body d-flex flex-column">
+                                        <h3 class="h5 card-title">Baquetas Maple 5A</h3>
+                                        <p class="card-text text-body-secondary flex-grow-1">Baquetas equilibradas de arce para estudio y directo, ideales para principiantes y avanzados.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <p class="fw-bold mb-0 text-primary">19 €</p>
+                                            <span class="badge text-bg-secondary">Todos los niveles</span>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button type="button" class="btn btn-primary flex-grow-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modalProducto"
+                                                    data-producto="Baquetas Maple 5A" data-precio="19"
+                                                    data-desc="Baquetas de arce equilibradas para cualquier estilo."
+                                                    data-nivel="Todos los niveles">Ver detalles</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-icon add-to-cart"
+                                                    data-producto="Baquetas Maple 5A" data-precio="19"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir al carrito"
+                                                    aria-label="Añadir Baquetas Maple 5A al carrito">
+                                                <i class="bi bi-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 producto-card" data-nivel="todos" data-precio="45">
+                                    <picture>
+                                        <source srcset="img/prod-baquetas-01.webp" type="image/webp">
+                                        <img src="img/prod-baquetas-01.jpg" class="card-img-top"
+                                             alt="Taburete de batería regulable en altura con acolchado" loading="lazy">
+                                    </picture>
+                                    <div class="card-body d-flex flex-column">
+                                        <h3 class="h5 card-title">Taburete Pro Ajustable</h3>
+                                        <p class="card-text text-body-secondary flex-grow-1">Taburete de batería con altura regulable, asiento acolchado ergonómico y base estable de 5 patas.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <p class="fw-bold mb-0 text-primary">45 €</p>
+                                            <span class="badge text-bg-secondary">Todos los niveles</span>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button type="button" class="btn btn-primary flex-grow-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modalProducto"
+                                                    data-producto="Taburete Pro Ajustable" data-precio="45"
+                                                    data-desc="Taburete ergonómico con base de 5 patas."
+                                                    data-nivel="Todos los niveles">Ver detalles</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-icon add-to-cart"
+                                                    data-producto="Taburete Pro Ajustable" data-precio="45"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir al carrito"
+                                                    aria-label="Añadir Taburete Pro al carrito">
+                                                <i class="bi bi-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <article class="card h-100 producto-card" data-nivel="todos" data-precio="29">
+                                    <picture>
+                                        <source srcset="img/prod-baquetas-01.webp" type="image/webp">
+                                        <img src="img/prod-baquetas-01.jpg" class="card-img-top"
+                                             alt="Almohadillas de silicona para reducir el ruido de los parches" loading="lazy">
+                                    </picture>
+                                    <div class="card-body d-flex flex-column">
+                                        <h3 class="h5 card-title">Silencers Pack 5 piezas</h3>
+                                        <p class="card-text text-body-secondary flex-grow-1">Almohadillas de silicona para reducir el volumen de ensayo hasta un 70% sin perder el feeling.</p>
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <p class="fw-bold mb-0 text-primary">29 €</p>
+                                            <span class="badge text-bg-secondary">Todos los niveles</span>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <button type="button" class="btn btn-primary flex-grow-1"
+                                                    data-bs-toggle="modal" data-bs-target="#modalProducto"
+                                                    data-producto="Silencers Pack 5 piezas" data-precio="29"
+                                                    data-desc="Almohadillas de silicona para reducir el volumen de ensayo."
+                                                    data-nivel="Todos los niveles">Ver detalles</button>
+                                            <button type="button" class="btn btn-outline-secondary btn-icon add-to-cart"
+                                                    data-producto="Silencers Pack 5 piezas" data-precio="29"
+                                                    data-bs-toggle="tooltip" data-bs-placement="top" title="Añadir al carrito"
+                                                    aria-label="Añadir Silencers Pack al carrito">
+                                                <i class="bi bi-cart-plus" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Banda separadora -->
+        <div class="divider-band" aria-hidden="true"></div>
+
+        <!-- ======= DEMO MULTIMEDIA ======= -->
+        <section id="demo-multimedia" class="py-5" aria-labelledby="demo-heading">
+            <div class="container">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-6">
+                        <h2 id="demo-heading" class="h3 mb-3">Demo de sonido y vídeo</h2>
+                        <p class="text-body-secondary mb-4">
+                            Escucha cómo suenan algunos de nuestros kits y platos en contexto real de banda.
+                            Los clips están optimizados para streaming en dispositivos móviles.
+                        </p>
+                        <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm mb-3">
+                            <video controls preload="metadata" poster="img/video-poster.jpg"
+                                   aria-label="Vídeo demostración de kit de batería electrónica">
+                                <source src="video/demo-electronic-kit.webm" type="video/webm">
+                                <p>Tu navegador no soporta el elemento de vídeo HTML5. <a href="video/demo-electronic-kit.webm">Descarga el vídeo</a>.</p>
+                            </video>
+                        </div>
+                        <p class="small text-body-secondary mb-2">Groove de batería acústica:</p>
+                        <audio controls preload="metadata" class="w-100 mb-3"
+                               aria-label="Demo de sonido de batería acústica">
+                            <source src="audio/groove-acustica.mp3" type="audio/mpeg">
+                            Tu navegador no soporta el elemento de audio HTML5.
+                        </audio>
+                        <p class="small text-body-secondary mb-2">Fill electrónico de demostración:</p>
+                        <audio controls preload="metadata" class="w-100 mb-3"
+                               aria-label="Demo de fill electrónico">
+                            <source src="audio/fill-electronico.mp3" type="audio/mpeg">
+                            Tu navegador no soporta el elemento de audio HTML5.
+                        </audio>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="h4 mb-3">Visualizador de ritmo en canvas</h3>
+                        <p class="text-body-secondary mb-3">
+                            Visualización animada de un patrón de groove implementada con el elemento
+                            HTML5 <code>&lt;canvas&gt;</code> y JavaScript puro.
+                        </p>
+                        <div class="canvas-wrapper">
+                            <canvas id="drumCanvas" width="560" height="200" role="img"
+                                    aria-label="Visualización animada del ritmo de batería con barras de colores"></canvas>
+                        </div>
+                        <p class="small text-body-secondary mt-2 text-center">
+                            <i class="bi bi-info-circle me-1" aria-hidden="true"></i>
+                            Animación continua generada con <code>requestAnimationFrame</code>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= TESTIMONIOS ======= -->
+        <section id="testimonios" class="py-5 bg-body-tertiary" aria-labelledby="testimonios-heading">
+            <div class="container">
+                <h2 id="testimonios-heading" class="h3 mb-1 text-center">Lo que dicen nuestros clientes</h2>
+                <p class="text-body-secondary text-center mb-5">Más de 500 músicos ya confían en DrumStore Pro</p>
+
+                <!-- Carousel de testimonios -->
+                <div id="testimoniosCarousel" class="carousel slide" data-bs-ride="carousel"
+                     aria-label="Carrusel de testimonios de clientes">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-md-6 col-lg-4">
+                                    <blockquote class="testimonial-card p-4 h-100">
+                                        <div class="testimonial-stars mb-2" aria-label="5 de 5 estrellas">★★★★★</div>
+                                        <p class="mb-3">"El Starter Groove llegó perfectamente embalado. Lo monté en una tarde y sonó genial desde el primer día. Totalmente recomendable para empezar."</p>
+                                        <footer>
+                                            <cite class="fw-semibold">Carlos M.</cite>
+                                            <span class="text-body-secondary small"> · Madrid</span>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <blockquote class="testimonial-card p-4 h-100">
+                                        <div class="testimonial-stars mb-2" aria-label="5 de 5 estrellas">★★★★★</div>
+                                        <p class="mb-3">"El asesoramiento previo a la compra fue excelente. Me ayudaron a elegir el E-Drum Compact y estoy encantada. Silencioso y perfecto para piso."</p>
+                                        <footer>
+                                            <cite class="fw-semibold">Laura G.</cite>
+                                            <span class="text-body-secondary small"> · Barcelona</span>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                                <div class="col-md-6 col-lg-4 d-none d-lg-block">
+                                    <blockquote class="testimonial-card p-4 h-100">
+                                        <div class="testimonial-stars mb-2" aria-label="4 de 5 estrellas">★★★★☆</div>
+                                        <p class="mb-3">"El Rock Bronze Pack suena brutal en directo. Entrega rápida y el embalaje es muy cuidado. Le falta un poco más de variedad en platos de jazz."</p>
+                                        <footer>
+                                            <cite class="fw-semibold">Iván R.</cite>
+                                            <span class="text-body-secondary small"> · Sevilla</span>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-md-6 col-lg-4">
+                                    <blockquote class="testimonial-card p-4 h-100">
+                                        <div class="testimonial-stars mb-2" aria-label="5 de 5 estrellas">★★★★★</div>
+                                        <p class="mb-3">"El Stage Maple Pro es una pasada. Se nota la diferencia de calidad respecto a otras tiendas. El soporte postventa también fue muy profesional."</p>
+                                        <footer>
+                                            <cite class="fw-semibold">Ana P.</cite>
+                                            <span class="text-body-secondary small"> · Valencia</span>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <blockquote class="testimonial-card p-4 h-100">
+                                        <div class="testimonial-stars mb-2" aria-label="5 de 5 estrellas">★★★★★</div>
+                                        <p class="mb-3">"Los Silencers Pack son increíbles. Ahora puedo ensayar en casa sin que los vecinos se quejen. Los recomiendo junto con las baquetas Maple 5A."</p>
+                                        <footer>
+                                            <cite class="fw-semibold">Javier L.</cite>
+                                            <span class="text-body-secondary small"> · Bilbao</span>
+                                        </footer>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center gap-2 mt-4">
+                        <button class="btn btn-outline-dark btn-sm" type="button"
+                                data-bs-target="#testimoniosCarousel" data-bs-slide="prev"
+                                aria-label="Testimonios anteriores">
+                            <i class="bi bi-chevron-left" aria-hidden="true"></i>
+                        </button>
+                        <button class="btn btn-outline-dark btn-sm" type="button"
+                                data-bs-target="#testimoniosCarousel" data-bs-slide="next"
+                                aria-label="Testimonios siguientes">
+                            <i class="bi bi-chevron-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= FAQ ======= -->
+        <section id="faq" class="py-5" aria-labelledby="faq-heading">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 id="faq-heading" class="h3 mb-1 text-center">Preguntas frecuentes</h2>
+                        <p class="text-body-secondary text-center mb-5">Resolvemos tus dudas antes de comprar</p>
+
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq1"
+                                            aria-expanded="true" aria-controls="faq1">
+                                        ¿Cuánto tarda el envío de una batería completa?
+                                    </button>
+                                </h3>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Los kits de batería completos se entregan en un plazo de <strong>3 a 5 días hábiles</strong>
+                                        para la Península. Canarias, Ceuta y Melilla pueden tardar entre 5 y 7 días hábiles.
+                                        Recibirás un número de seguimiento por correo electrónico.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq2"
+                                            aria-expanded="false" aria-controls="faq2">
+                                        ¿Puedo devolver un producto si no me convence?
+                                    </button>
+                                </h3>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Sí. Dispones de <strong>30 días naturales</strong> desde la recepción del pedido
+                                        para solicitar una devolución sin necesidad de justificación. El producto debe estar
+                                        en su embalaje original y sin señales de uso.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq3"
+                                            aria-expanded="false" aria-controls="faq3">
+                                        ¿Qué batería me recomendáis si soy principiante?
+                                    </button>
+                                </h3>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Depende de tu espacio y presupuesto. Si vives en piso, el <strong>E-Drum Compact</strong>
+                                        es ideal por su bajo volumen. Si tienes espacio y presupuesto algo mayor, el
+                                        <strong>Starter Groove 5 piezas</strong> te dará la sensación real de tocar una batería acústica.
+                                        Usa nuestro formulario de asesoramiento para una recomendación personalizada.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq4"
+                                            aria-expanded="false" aria-controls="faq4">
+                                        ¿Los precios incluyen IVA?
+                                    </button>
+                                </h3>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Sí. Todos los precios indicados en nuestra web incluyen el <strong>IVA al 21%</strong>.
+                                        Los gastos de envío se calcularán durante el proceso de compra según el destino y
+                                        el peso del pedido.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h3 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq5"
+                                            aria-expanded="false" aria-controls="faq5">
+                                        ¿Ofrecéis garantía en todos los productos?
+                                    </button>
+                                </h3>
+                                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        Todos los productos tienen <strong>2 años de garantía legal</strong>.
+                                        Además, en los kits de la gama avanzada ofrecemos una garantía extendida de
+                                        un año adicional en herrajes y módulos electrónicos sin coste adicional.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======= CONTACTO ======= -->
+        <section id="contacto" class="py-5 bg-body-tertiary" aria-labelledby="contacto-titulo">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <h2 id="contacto-titulo" class="h3 mb-3">Formulario de contacto y asesoramiento</h2>
+                        <p class="text-body-secondary mb-4">
+                            Indica tu nivel, estilo musical y presupuesto aproximado y te recomendaremos
+                            el kit que mejor encaje contigo.
+                        </p>
+                        <form class="row g-3" novalidate aria-labelledby="contacto-titulo">
+                            <input type="hidden" name="origen" value="drumstore-contacto">
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label">Nombre completo <span aria-hidden="true" class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="nombre" name="nombre"
+                                       autocomplete="name" required aria-required="true"
+                                       aria-describedby="nombre-error">
+                                <div id="nombre-error" class="invalid-feedback">Por favor, introduce tu nombre.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Correo electrónico <span aria-hidden="true" class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                       autocomplete="email" required aria-required="true"
+                                       aria-describedby="email-error">
+                                <div id="email-error" class="invalid-feedback">Introduce un correo válido.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nivel" class="form-label">Nivel como baterista</label>
+                                <select id="nivel" name="nivel" class="form-select" required aria-required="true">
+                                    <option value="">Selecciona tu nivel</option>
+                                    <option value="inicio">Principiante</option>
+                                    <option value="intermedio">Intermedio</option>
+                                    <option value="avanzado">Avanzado</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <legend class="fs-6 mb-1">Estilo principal</legend>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="estilo" id="estilo-rock" value="rock">
+                                        <label class="form-check-label" for="estilo-rock">Rock / Pop</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="estilo" id="estilo-metal" value="metal">
+                                        <label class="form-check-label" for="estilo-metal">Metal</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="estilo" id="estilo-jazz" value="jazz">
+                                        <label class="form-check-label" for="estilo-jazz">Jazz / Fusión</label>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="col-12">
+                                <label for="mensaje" class="form-label">Cuéntanos qué necesitas <span aria-hidden="true" class="text-danger">*</span></label>
+                                <textarea class="form-control" id="mensaje" name="mensaje" rows="4"
+                                          required aria-required="true" aria-describedby="mensaje-error"></textarea>
+                                <div id="mensaje-error" class="invalid-feedback">Por favor, escribe tu consulta.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="presupuesto" class="form-label">Presupuesto aproximado (€)</label>
+                                <input type="number" class="form-control" id="presupuesto" name="presupuesto"
+                                       min="200" max="5000" step="50" aria-describedby="presupuesto-hint">
+                                <div id="presupuesto-hint" class="form-text">Entre 200 € y 5.000 €</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="preferencia-contacto" class="form-label">Preferencia de contacto</label>
+                                <select id="preferencia-contacto" name="preferencia-contacto" class="form-select">
+                                    <option value="email">Correo electrónico</option>
+                                    <option value="telefono">Teléfono</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="1"
+                                           id="acepta-privacidad" required aria-required="true">
+                                    <label class="form-check-label" for="acepta-privacidad">
+                                        He leído y acepto la <a href="#" class="link-primary">política de privacidad</a>.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary" id="btn-enviar">
+                                    <i class="bi bi-send me-2" aria-hidden="true"></i>Enviar consulta
+                                </button>
+                            </div>
+                            <!-- Mensaje de confirmación -->
+                            <div class="col-12" id="form-success" role="alert" aria-live="polite" hidden>
+                                <div class="alert alert-success mb-0">
+                                    <i class="bi bi-check-circle me-2" aria-hidden="true"></i>
+                                    ¡Consulta enviada! Te responderemos en menos de 24 horas.
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="h4 mb-3">Ventajas de DrumStore Pro</h3>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                <div class="border rounded-3 p-3 h-100 bg-body ventaja-card">
+                                    <h4 class="h6 d-flex align-items-center gap-2">
+                                        <i class="bi bi-headphones" aria-hidden="true"></i>Asesoramiento musical
+                                    </h4>
+                                    <p class="small mb-0">Equipo de percusionistas activos en giras y estudio que recomiendan productos reales para tus necesidades.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="border rounded-3 p-3 h-100 bg-body ventaja-card">
+                                    <h4 class="h6 d-flex align-items-center gap-2">
+                                        <i class="bi bi-truck" aria-hidden="true"></i>Envío seguro
+                                    </h4>
+                                    <p class="small mb-0">Embalaje reforzado específico para cascos y platos, con seguimiento online en tiempo real.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="border rounded-3 p-3 h-100 bg-body ventaja-card">
+                                    <h4 class="h6 d-flex align-items-center gap-2">
+                                        <i class="bi bi-shield-check" aria-hidden="true"></i>Garantía extendida
+                                    </h4>
+                                    <p class="small mb-0">Cobertura adicional de dos años en herrajes y módulos electrónicos sin coste extra.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="border rounded-3 p-3 h-100 bg-body ventaja-card">
+                                    <h4 class="h6 d-flex align-items-center gap-2">
+                                        <i class="bi bi-music-note-beamed" aria-hidden="true"></i>Kits educativos
+                                    </h4>
+                                    <p class="small mb-0">Packs pensados para escuelas de música y aulas de percusión con precios especiales.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ======= FOOTER ======= -->
+    <footer class="bg-dark text-light pt-5 pb-3 mt-auto" role="contentinfo">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h2 class="h5 mb-3">DrumStore Pro</h2>
+                    <p class="small text-light-emphasis">Tienda online especializada en baterías y percusión, con demos de audio y vídeo para elegir tu sonido con confianza.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h6 mb-3">Enlace rápidos</h3>
+                    <nav aria-label="Navegación del pie de página">
+                        <ul class="list-unstyled small">
+                            <li><a class="link-footer" href="#catalogo">Catálogo</a></li>
+                            <li><a class="link-footer" href="#demo-multimedia">Demos</a></li>
+                            <li><a class="link-footer" href="#testimonios">Opiniones</a></li>
+                            <li><a class="link-footer" href="#faq">FAQ</a></li>
+                            <li><a class="link-footer" href="#contacto">Contacto</a></li>
+                            <li><a class="link-footer" href="docs/memoria.html" target="_blank" rel="noopener">Memoria del proyecto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="h6 mb-3">Newsletter</h3>
+                    <form aria-label="Formulario de suscripción al newsletter">
+                        <label class="form-label small" for="newsletter-email">Recibe guías y ofertas sobre percusión</label>
+                        <div class="input-group input-group-sm">
+                            <input type="email" id="newsletter-email" class="form-control"
+                                   placeholder="Tu correo electrónico" autocomplete="email"
+                                   aria-label="Correo electrónico para el newsletter">
+                            <button class="btn btn-primary" type="submit">Suscribirme</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 pt-3 mt-3 border-top border-secondary">
+                <p class="small mb-0">© 2026 DrumStore Pro. Proyecto académico de Diseño de Interfaces Web.</p>
+                <a class="link-footer small" href="#hero">Volver arriba <i class="bi bi-arrow-up" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ======= MODAL: PRODUCTO ======= -->
+    <div class="modal fade" id="modalProducto" tabindex="-1"
+         aria-labelledby="modalProductoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="modalProductoLabel">Detalle del producto</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <picture>
+                                <source srcset="img/modal-producto.webp" type="image/webp">
+                                <img src="img/modal-producto.jpg" class="img-fluid rounded"
+                                     alt="Detalle del producto seleccionado" id="modal-img">
+                            </picture>
+                        </div>
+                        <div class="col-md-6">
+                            <span class="badge rounded-pill text-bg-dark mb-2">Recomendado DrumStore Pro</span>
+                            <p id="modal-desc" class="mb-3">Descripción del producto.</p>
+                            <ul class="small mb-3" id="modal-specs">
+                                <li>Casco de arce o abedul según modelo.</li>
+                                <li>Herrajes de doble perfil para mayor estabilidad.</li>
+                                <li>Compatibilidad con triggers y pads electrónicos.</li>
+                            </ul>
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <span class="h4 mb-0 text-primary" id="modal-precio"></span>
+                                <span class="badge text-bg-secondary" id="modal-nivel"></span>
+                            </div>
+                            <button type="button" class="btn btn-primary" id="modal-add-cart">
+                                <i class="bi bi-cart-plus me-2" aria-hidden="true"></i>Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= MODAL: CARRITO ======= -->
+    <div class="modal fade" id="modalCarrito" tabindex="-1"
+         aria-labelledby="modalCarritoLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="modalCarritoLabel">
+                        <i class="bi bi-cart3 me-2" aria-hidden="true"></i>Carrito de DrumStore Pro
+                    </h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group mb-3" id="cart-items" aria-label="Productos en el carrito" aria-live="polite"></ul>
+                    <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                        <p class="fw-bold mb-0">Total estimado</p>
+                        <p class="fw-bold mb-0 text-primary h5" id="cart-total">0 €</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir navegando</button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="bi bi-credit-card me-2" aria-hidden="true"></i>Finalizar consulta
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= MODAL: ASESOR ======= -->
+    <div class="modal fade" id="modalAsesor" tabindex="-1"
+         aria-labelledby="modalAsesorLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="modalAsesorLabel">
+                        <i class="bi bi-headphones me-2" aria-hidden="true"></i>Asesoramiento para principiantes
+                    </h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Si estás empezando en el mundo de la batería, selecciona el rango de precio y estilo musical en el formulario de contacto y un asesor te enviará tres propuestas equilibradas para tu perfil.</p>
+                    <ul class="small">
+                        <li>Recomendación personalizada en menos de 24h</li>
+                        <li>Sin compromiso de compra</li>
+                        <li>Comparativa entre modelos acústicos y electrónicos</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <a href="#contacto" class="btn btn-primary" data-bs-dismiss="modal">
+                        <i class="bi bi-envelope me-2" aria-hidden="true"></i>Ir al formulario
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
