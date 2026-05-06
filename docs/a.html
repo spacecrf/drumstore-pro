@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Memoria del Proyecto - DrumStore Pro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            color-scheme: light dark;
+            --color-primario: #ff6b35;
+            --color-oscuro: #111827;
+            --color-claro: #f9fafb;
+            --color-secundario: #1f2933;
+            --color-acento: #22c55e;
+            --color-borde: #d1d5db;
+            --color-texto: #111827;
+            --color-texto-suave: #4b5563;
+            --font-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            --font-mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-base);
+            color: var(--color-texto);
+            background-color: white;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 24mm 20mm 20mm 24mm;
+            background: white;
+            position: relative;
+        }
+        .page-header {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 210mm;
+            padding: 8mm 20mm 4mm 24mm;
+            background: white;
+            border-bottom: 1px solid var(--color-borde);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+            color: var(--color-texto-suave);
+        }
+        .page-footer {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 210mm;
+            padding: 4mm 20mm 8mm 24mm;
+            background: white;
+            border-top: 1px solid var(--color-borde);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            color: var(--color-texto-suave);
+        }
+        .page-number::after {
+            counter-increment: page;
+            content: "Página " counter(page);
+        }
+        main {
+            counter-reset: h2counter h3counter;
+        }
+        h1, h2, h3, h4 {
+            margin-top: 0;
+            color: var(--color-oscuro);
+        }
+        h1 {
+            font-size: 28px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: 20px;
+            margin-top: 32px;
+            border-left: 4px solid var(--color-primario);
+            padding-left: 8px;
+            counter-increment: h2counter;
+        }
+        h2::before {
+            content: counter(h2counter) ". ";
+            font-weight: 600;
+            color: var(--color-primario);
+        }
+        h3 {
+            font-size: 16px;
+            margin-top: 20px;
+            counter-increment: h3counter;
+        }
+        h3::before {
+            content: counter(h2counter) "." counter(h3counter) " ";
+            font-weight: 500;
+            color: var(--color-texto-suave);
+        }
+        h4 {
+            font-size: 14px;
+            margin-top: 16px;
+        }
+        p {
+            line-height: 1.5;
+            font-size: 13px;
+            color: var(--color-texto-suave);
+        }
+        ul, ol {
+            font-size: 13px;
+            color: var(--color-texto-suave);
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .portada {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            height: 80vh;
+            gap: 16px;
+        }
+        .portada-subtitulo {
+            font-size: 14px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--color-texto-suave);
+        }
+        .portada-titulo {
+            font-size: 40px;
+            line-height: 1.1;
+            color: var(--color-oscuro);
+        }
+        .portada-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: #f97316;
+            color: white;
+            font-size: 11px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .portada-meta {
+            margin-top: 24px;
+            font-size: 12px;
+            color: var(--color-texto-suave);
+        }
+        .portada-meta-row {
+            display: flex;
+            gap: 48px;
+            margin-bottom: 4px;
+        }
+        .portada-meta-label {
+            font-weight: 600;
+            min-width: 80px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 999px;
+            padding: 2px 8px;
+            font-size: 11px;
+            border: 1px solid var(--color-borde);
+            gap: 6px;
+        }
+        .badge-pill {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-texto-suave);
+        }
+        .panel {
+            border-radius: 10px;
+            border: 1px solid var(--color-borde);
+            padding: 12px 14px;
+            margin: 10px 0 14px;
+            background: #f9fafb;
+        }
+        .panel-destacado {
+            border-color: var(--color-primario);
+            background: #fff7ed;
+        }
+        .panel-titulo {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-texto-suave);
+            margin-bottom: 4px;
+        }
+        .panel-contenido {
+            font-size: 12px;
+        }
+        .indice {
+            columns: 2;
+            column-gap: 40px;
+            font-size: 13px;
+        }
+        .indice a {
+            text-decoration: none;
+            color: var(--color-texto-suave);
+        }
+        .indice a:hover {
+            color: var(--color-primario);
+        }
+        .indice-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            break-inside: avoid;
+        }
+        .indice-item span {
+            white-space: nowrap;
+        }
+        .tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0 16px;
+            font-size: 12px;
+        }
+        .tabla th,
+        .tabla td {
+            border: 1px solid var(--color-borde);
+            padding: 6px 8px;
+            vertical-align: top;
+        }
+        .tabla th {
+            background: #f3f4f6;
+            font-weight: 600;
+        }
+        .tabla tr:nth-child(even) td {
+            background: #f9fafb;
+        }
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .tag {
+            border-radius: 999px;
+            padding: 2px 8px;
+            background: #e5e7eb;
+            font-size: 11px;
+        }
+        .tag-primario {
+            background: rgba(249, 115, 22, 0.12);
+            color: #b45309;
+        }
+        .codigo {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            background: #111827;
+            color: #e5e7eb;
+            padding: 8px 10px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 8px 0 12px;
+        }
+        .rubrica-nivel {
+            width: 90px;
+            white-space: nowrap;
+        }
+        .rubrica-puntuacion {
+            width: 70px;
+            text-align: center;
+        }
+        .lista-check {
+            list-style: none;
+            padding-left: 0;
+        }
+        .lista-check li::before {
+            content: "✔";
+            display: inline-block;
+            margin-right: 6px;
+            color: var(--color-acento);
+            font-weight: 700;
+        }
+        .lista-check li {
+            margin-bottom: 4px;
+        }
+        @page {
+            size: A4;
+            margin: 20mm 15mm;
+        }
+        @media print {
+            body {
+                background: white;
+            }
+            .page {
+                box-shadow: none;
+                margin: 0;
+            }
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div>DrumStore Pro · Interfaz Web Responsive</div>
+        <div>Memoria del proyecto</div>
+    </header>
+    <footer class="page-footer">
+        <div>Proyecto académico · Diseño de Interfaces Web</div>
+        <div class="page-number"></div>
+    </footer>
+    <main class="page">
+        <section class="portada" id="portada">
+            <div class="portada-pill">
+                <span>DrumStore Pro</span>
+                <span class="badge-pill">Tienda online de baterías y percusión</span>
+            </div>
+            <div class="portada-subtitulo">Memoria del proyecto</div>
+            <h1 class="portada-titulo">Interfaz web responsive para tienda online de baterías y percusión</h1>
+            <div class="panel panel-destacado">
+                <div class="panel-titulo">Resumen ejecutivo</div>
+                <div class="panel-contenido">
+                    Interfaz web educativa desarrollada con Bootstrap 5.3, centrada en venta de baterías y
+                    percusión para músicos principiantes y avanzados. El proyecto incluye planificación completa,
+                    guía de estilos, implementación responsive, evaluación de accesibilidad y usabilidad, así como
+                    optimización SEO y memoria lista para exportar a PDF.
+                </div>
+            </div>
+            <div class="portada-meta">
+                <div class="portada-meta-row">
+                    <span class="portada-meta-label">Proyecto</span>
+                    <span>Interfaz Web · DrumStore Pro</span>
+                </div>
+                <div class="portada-meta-row">
+                    <span class="portada-meta-label">Autor</span>
+                    <span>Manuel Garcia Rodriquez</span>
+                </div>
+                <div class="portada-meta-row">
+                    <span class="portada-meta-label">Módulo</span>
+                    <span>Diseño de Interfaces Web (DIW)</span>
+                </div>
+                <div class="portada-meta-row">
+                    <span class="portada-meta-label">Curso</span>
+                    <span>2º DAW</span>
+                </div>
+                <div class="portada-meta-row">
+                    <span class="portada-meta-label">Fecha</span>
+                    <span>Febrero 2026</span>
+                </div>
+            </div>
+        </section>
+        <section id="indice">
+            <h2>Índice</h2>
+            <div class="indice">
+                <div class="indice-item">
+                    <a href="#introduccion">1 Introducción</a>
+                    <span>3</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#planificacion">2 Planificación del proyecto</a>
+                    <span>4</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#trello">3 Tablero de trabajo (Trello)</a>
+                    <span>5</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#versionado">4 Control de versiones y repositorio</a>
+                    <span>6</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#estructura">5 Estructura de carpetas</a>
+                    <span>7</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#guia-estilos">6 Guía de estilos</a>
+                    <span>8</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#desarrollo">7 Desarrollo de la interfaz con Bootstrap 5.3</a>
+                    <span>10</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#multimedia">8 Multimedia, rendimiento y justificación técnica</a>
+                    <span>13</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#accesibilidad">9 Accesibilidad (WCAG 2.1, ARIA)</a>
+                    <span>16</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#usabilidad">10 Usabilidad y experiencia de usuario</a>
+                    <span>19</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#seo">11 SEO técnico y de contenidos</a>
+                    <span>21</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#incidencias">12 Incidencias y decisiones de diseño</a>
+                    <span>24</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#conclusiones">13 Conclusiones</a>
+                    <span>25</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#webgrafia">14 Webgrafía</a>
+                    <span>26</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#anexo1">Anexo 1 · Buenas prácticas multimedia</a>
+                    <span>27</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#anexo2">Anexo 2 · Rúbrica de accesibilidad</a>
+                    <span>29</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#anexo3">Anexo 3 · Rúbrica de usabilidad</a>
+                    <span>31</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#anexo4">Anexo 4 · Detalles SEO</a>
+                    <span>33</span>
+                </div>
+                <div class="indice-item">
+                    <a href="#anexo5">Anexo 5 · Guion de exposición y checklist</a>
+                    <span>35</span>
+                </div>
+            </div>
+        </section>
+        <section id="introduccion">
+            <h2>Introducción</h2>
+            <h3>Contexto</h3>
+            <p>
+                DrumStore Pro es una tienda online especializada en baterías acústicas, baterías electrónicas, platos,
+                baquetas y accesorios de percusión. El proyecto se plantea como una interfaz web educativa diseñada para
+                un entorno académico de segundo curso de Desarrollo de Aplicaciones Web, poniendo el foco en las
+                buenas prácticas de diseño visual, accesibilidad, usabilidad y SEO.
+            </p>
+            <h3>Objetivo general</h3>
+            <p>
+                Desarrollar una interfaz web responsive completa, basada en Bootstrap 5.3, que permita explorar el
+                catálogo de productos de percusión de forma clara, accesible y optimizada para dispositivos móviles,
+                integrando contenidos multimedia y componentes interactivos avanzados.
+            </p>
+            <h3>Objetivos específicos</h3>
+            <ul>
+                <li>Aplicar un proceso de planificación formal (objetivos, alcance, cronograma y tablero de trabajo).</li>
+                <li>Definir una guía de estilos coherente con la temática musical y tecnológica.</li>
+                <li>Implementar una interfaz responsive con Bootstrap 5.3 y CSS/SASS personalizado.</li>
+                <li>Integrar multimedia optimizada (imágenes WebP, vídeo, audio, SVG, favicon, canvas, animaciones).</li>
+                <li>Garantizar la conformidad con WCAG 2.1 AA mediante ARIA, contraste adecuado y navegación por teclado.</li>
+                <li>Mejorar la experiencia de usuario mediante patrones de usabilidad y componentes interactivos.</li>
+                <li>Optimizar SEO on-page y técnico, incluyendo metadatos, estructura semántica y sitemap.</li>
+            </ul>
+        </section>
+        <section id="planificacion">
+            <h2>Planificación del proyecto</h2>
+            <h3>Objetivos</h3>
+            <ul>
+                <li>Crear una interfaz web funcional que represente un flujo realista de compra de productos de percusión.</li>
+                <li>Servir como referencia académica de proyecto completo de diseño y desarrollo frontend.</li>
+                <li>Documentar el proceso siguiendo la estructura de una memoria técnica profesional.</li>
+            </ul>
+            <h3>Público objetivo</h3>
+            <ul>
+                <li>Músicos principiantes que buscan un primer set de batería con asesoramiento claro.</li>
+                <li>Músicos intermedios y avanzados que necesitan comparar características técnicas entre marcas.</li>
+                <li>Profesorado de escuelas de música que recomienda equipamiento a su alumnado.</li>
+            </ul>
+            <h3>Alcance</h3>
+            <p>
+                El alcance del proyecto se limita a la capa de interfaz web (frontend). No se implementa un backend real
+                ni pasarela de pago, pero se simulan las páginas clave de un e-commerce: portada, catálogo, detalle de
+                producto, carrito simplificado y formulario de contacto.
+            </p>
+            <ul>
+                <li>Incluido: estructura HTML5 semántica, estilos con Bootstrap y CSS propio, interactividad con JavaScript.</li>
+                <li>Incluido: integración de multimedia, auditoría de accesibilidad, análisis de usabilidad y SEO.</li>
+                <li>No incluido: lógica de negocio real, base de datos, autenticación ni gestión de pedidos.</li>
+            </ul>
+            <h3>Cronograma resumido</h3>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Fase</th>
+                        <th>Descripción</th>
+                        <th>Entregables principales</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Fase 1 · Análisis</td>
+                        <td>Definición de objetivos, público objetivo, benchmarking y estructura de contenidos.</td>
+                        <td>Planificación, guía de estilos inicial, mapa de navegación.</td>
+                    </tr>
+                    <tr>
+                        <td>Fase 2 · Diseño</td>
+                        <td>Diseño de layout responsive, definición de componentes Bootstrap y patrones de UI.</td>
+                        <td>Prototipo de baja fidelidad, estructura HTML inicial.</td>
+                    </tr>
+                    <tr>
+                        <td>Fase 3 · Implementación</td>
+                        <td>Maquetación completa con Bootstrap 5.3, CSS/SASS y JavaScript.</td>
+                        <td>Código fuente, multimedia optimizada, scripts de interactividad.</td>
+                    </tr>
+                    <tr>
+                        <td>Fase 4 · Validación</td>
+                        <td>Pruebas de accesibilidad, rendimiento, usabilidad y SEO técnico.</td>
+                        <td>Informes de Lighthouse, WAVE, rúbricas y mejoras aplicadas.</td>
+                    </tr>
+                    <tr>
+                        <td>Fase 5 · Documentación</td>
+                        <td>Redacción completa de la memoria, anexos y guion de exposición.</td>
+                        <td>Memoria en PDF, checklist final y materiales de presentación.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="trello">
+            <h2>Tablero de trabajo (Trello)</h2>
+            <p>
+                Para gestionar el flujo de trabajo se propone un tablero Kanban en Trello con las columnas:
+                Pendiente, En proceso, Revisar y Finalizado. Las tarjetas representan tareas reales del proyecto.
+            </p>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Columna</th>
+                        <th>Tarea</th>
+                        <th>Descripción breve</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pendiente</td>
+                        <td>Definir guía de estilos DrumStore Pro</td>
+                        <td>Colores oficiales, tipografías, componentes y espaciados.</td>
+                    </tr>
+                    <tr>
+                        <td>Pendiente</td>
+                        <td>Diseñar estructura de navegación</td>
+                        <td>Definir secciones principales y rutas del sitio.</td>
+                    </tr>
+                    <tr>
+                        <td>En proceso</td>
+                        <td>Maquetar home con Bootstrap 5.3</td>
+                        <td>Navbar, hero, carrusel, grid de productos destacados.</td>
+                    </tr>
+                    <tr>
+                        <td>En proceso</td>
+                        <td>Implementar componentes interactivos</td>
+                        <td>Tabs, tooltips, modales, sliders y canvas.</td>
+                    </tr>
+                    <tr>
+                        <td>Revisar</td>
+                        <td>Auditoría de accesibilidad</td>
+                        <td>Validar WCAG 2.1 AA con WAVE y Lighthouse.</td>
+                    </tr>
+                    <tr>
+                        <td>Revisar</td>
+                        <td>Revisión SEO on-page</td>
+                        <td>Metas, títulos, estructura de encabezados y schema.org.</td>
+                    </tr>
+                    <tr>
+                        <td>Finalizado</td>
+                        <td>Estructura de carpetas del proyecto</td>
+                        <td>Creación de css, sass, img, video, audio, js, docs.</td>
+                    </tr>
+                    <tr>
+                        <td>Finalizado</td>
+                        <td>Redacción memoria PDF</td>
+                        <td>Memoria completa con anexos y checklist final.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="versionado">
+            <h2>Control de versiones y repositorio</h2>
+            <h3>Estructura del repositorio</h3>
+            <p>
+                El proyecto se organiza como un repositorio Git, pensado para alojarse en GitHub con la siguiente
+                estructura de alto nivel:
+            </p>
+            <div class="codigo">
+                DrumStore-Pro/
+                ├─ css/
+                ├─ sass/
+                ├─ js/
+                ├─ img/
+                ├─ audio/
+                ├─ video/
+                ├─ docs/
+                ├─ index.html
+                ├─ sitemap.xml
+                └─ robots.txt
+            </div>
+            <h3>Commits simulados</h3>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Hash simulado</th>
+                        <th>Mensaje de commit</th>
+                        <th>Contenido principal</th>
+                    </tr>
+                </thead>
+            <tbody>
+                <tr>
+                    <td>a1f3c01</td>
+                    <td>chore: inicializa estructura base del proyecto DrumStore Pro</td>
+                    <td>Creación de index.html y carpetas css, js, img, audio, video, docs.</td>
+                </tr>
+                <tr>
+                    <td>b7e9d12</td>
+                    <td>feat(ui): maquetación inicial home con Bootstrap 5.3</td>
+                    <td>Navbar, hero, carrusel, grid de productos, footer.</td>
+                </tr>
+                <tr>
+                    <td>c2a4f89</td>
+                    <td>feat(style): añade SASS, custom.css y sistema de diseño</td>
+                    <td>Variables de color, tipografía, botones y layouts.</td>
+                </tr>
+                <tr>
+                    <td>d8c7a35</td>
+                    <td>feat(accessibility): mejora semántica, ARIA y navegación por teclado</td>
+                    <td>Roles, aria-label, foco visible y orden lógico de tabulación.</td>
+                </tr>
+                <tr>
+                    <td>e4d2b76</td>
+                    <td>feat(seo): metas, schema.org, sitemap y robots.txt</td>
+                    <td>Implementación SEO on-page y archivo sitemap.xml.</td>
+                </tr>
+                <tr>
+                    <td>f9b1e43</td>
+                    <td>docs: añade memoria del proyecto y anexos</td>
+                    <td>Memoria HTML lista para exportar a PDF y rúbricas.</td>
+                </tr>
+            </tbody>
+            </table>
+        </section>
+        <section id="estructura">
+            <h2>Estructura de carpetas</h2>
+            <p>
+                La estructura propuesta cumple los requisitos del enunciado y separa claramente estilos, scripts,
+                recursos multimedia y documentación.
+            </p>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Carpeta</th>
+                        <th>Contenido</th>
+                        <th>Ejemplos de archivos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>/css</td>
+                        <td>Hojas de estilo compiladas y minificadas.</td>
+                        <td>custom.min.css, vendor-overrides.css.</td>
+                    </tr>
+                    <tr>
+                        <td>/sass</td>
+                        <td>Fuentes SASS/SCSS para generar CSS.</td>
+                        <td>custom.scss, _variables.scss, _components.scss.</td>
+                    </tr>
+                    <tr>
+                        <td>/js</td>
+                        <td>Lógica de interactividad y componentes personalizados.</td>
+                        <td>main.js, canvas-visualizer.js.</td>
+                    </tr>
+                    <tr>
+                        <td>/img</td>
+                        <td>Imágenes optimizadas en WebP con fallback JPG/PNG.</td>
+                        <td>hero-drum.webp, hero-drum.jpg, producto-01.webp.</td>
+                    </tr>
+                    <tr>
+                        <td>/video</td>
+                        <td>Clips de vídeo MP4 optimizados y versiones comprimidas.</td>
+                        <td>demo-electronic-kit.mp4.</td>
+                    </tr>
+                    <tr>
+                        <td>/audio</td>
+                        <td>Audios MP3 breves para demo de sonido.</td>
+                        <td>groove-acustica.mp3, fill-electronico.mp3.</td>
+                    </tr>
+                    <tr>
+                        <td>/docs</td>
+                        <td>Memoria, rúbricas, planificaciones y checklist.</td>
+                        <td>memoria.html, anexos, guion-exposicion.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="guia-estilos">
+            <h2>Guía de estilos</h2>
+            <h3>Paleta de color</h3>
+            <p>
+                La paleta se inspira en la estética de escenarios y estudios de grabación, combinando tonos oscuros
+                con acentos cálidos que evocan metal y madera de baterías.
+            </p>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Uso principal</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Primario</td>
+                        <td>Botones principales, enlaces destacados, precio.</td>
+                        <td>#ff6b35</td>
+                    </tr>
+                    <tr>
+                        <td>Oscuro</td>
+                        <td>Fondos de secciones, navbar, footer.</td>
+                        <td>#111827</td>
+                    </tr>
+                    <tr>
+                        <td>Claro</td>
+                        <td>Fondos de contenido, tarjetas y bloques de texto.</td>
+                        <td>#f9fafb</td>
+                    </tr>
+                    <tr>
+                        <td>Éxito</td>
+                        <td>Mensajes de validación, confirmaciones.</td>
+                        <td>#22c55e</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Tipografías</h3>
+            <ul>
+                <li>Tipografía base: system-ui / Segoe UI, optimizada para legibilidad en pantalla.</li>
+                <li>Jerarquía de encabezados: tamaño decreciente H1–H6 y peso seminegrita.</li>
+                <li>Tipografía monoespaciada para ejemplos de código y precios.</li>
+            </ul>
+            <h3>Botones e iconos</h3>
+            <ul>
+                <li>Botón primario: color de fondo #ff6b35, texto blanco, bordes redondeados.</li>
+                <li>Botón secundario: fondo transparente, borde #ff6b35, texto en color primario.</li>
+                <li>Iconos basados en Bootstrap Icons para carrito, usuario y búsqueda.</li>
+            </ul>
+            <h3>Layout y grid</h3>
+            <ul>
+                <li>Grid de Bootstrap 5.3 con contenedores fluidos y puntos de corte sm, md, lg y xl.</li>
+                <li>Máxima anchura de contenido 1200px en pantallas grandes para mejorar legibilidad.</li>
+                <li>Spacing consistente usando clases de utilidad de margen y padding de Bootstrap.</li>
+            </ul>
+        </section>
+        <section id="desarrollo">
+            <h2>Desarrollo de la interfaz con Bootstrap 5.3</h2>
+            <h3>Páginas y secciones principales</h3>
+            <ul>
+                <li>Home: hero principal, carrusel de productos destacados, categorías por tipo de batería.</li>
+                <li>Catálogo: grid de tarjetas con filtros básicos (tipo, nivel, rango de precio).</li>
+                <li>Detalle de producto: ficha técnica ampliada, galería, audio y vídeo de demostración.</li>
+                <li>Carrito simplificado: resumen de productos seleccionados y CTA hacia contacto.</li>
+                <li>Contacto: formulario accesible con validación básica en cliente.</li>
+            </ul>
+            <h3>Componentes de Bootstrap utilizados</h3>
+            <div class="tag-row">
+                <span class="tag tag-primario">Navbar</span>
+                <span class="tag">Grid</span>
+                <span class="tag">Cards</span>
+                <span class="tag">Carousel</span>
+                <span class="tag">Tabs</span>
+                <span class="tag">Modals</span>
+                <span class="tag">Tooltips</span>
+                <span class="tag">Accordion</span>
+                <span class="tag">Alerts</span>
+                <span class="tag">Forms</span>
+            </div>
+            <h3>Integración con CSS personalizado y SASS</h3>
+            <p>
+                Sobre la base de Bootstrap 5.3 se añade un archivo SASS principal (custom.scss) desde el que se
+                redefinen variables, se ajustan colores de componentes y se declaran estilos específicos de DrumStore
+                Pro. El resultado se compila a custom.min.css para uso en producción.
+            </p>
+        </section>
+        <section id="multimedia">
+            <h2>Multimedia, rendimiento y justificación técnica</h2>
+            <h3>Formatos y compresión</h3>
+            <ul>
+                <li>Imágenes de producto en WebP con fallback JPG para compatibilidad.</li>
+                <li>Vídeos en MP4 H.264, resolución 720p y bitrate ajustado para mantener calidad/peso.</li>
+                <li>Audios en MP3 a 128 kbps o 160 kbps, duración corta orientada a demo.</li>
+                <li>Logo en SVG para escalado perfecto en pantallas retina y alta densidad.</li>
+                <li>Favicon en formato ICO/PNG con tamaños 32×32 y 64×64.</li>
+            </ul>
+            <h3>Rendimiento y SEO</h3>
+            <ul>
+                <li>Uso de loading="lazy" en imágenes y iframes.</li>
+                <li>Compresión previa de recursos multimedia antes de subirlos.</li>
+                <li>Uso de tamaños explícitos para evitar saltos de layout (CLS).</li>
+                <li>Metadatos alt descriptivos que combinan accesibilidad y SEO.</li>
+            </ul>
+        </section>
+        <section id="accesibilidad">
+            <h2>Accesibilidad (WCAG 2.1, ARIA)</h2>
+            <h3>Resumen de cumplimiento</h3>
+            <p>
+                La interfaz se diseña para aproximarse al nivel AA de las WCAG 2.1, cuidando el contraste mínimo,
+                la navegación por teclado, el uso de roles ARIA apropiados y la estructura semántica de encabezados.
+            </p>
+            <h3>Rúbrica resumida</h3>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th class="rubrica-nivel">Criterio</th>
+                        <th>Descripción</th>
+                        <th class="rubrica-puntuacion">Nivel</th>
+                        <th>Evidencias</th>
+                        <th>Observaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Perceptible</td>
+                        <td>Textos alternativos, contraste y estructura visible.</td>
+                        <td>AA</td>
+                        <td>Alt en imágenes, contraste ≥ 4.5:1, tamaños de fuente adecuados.</td>
+                        <td>Contrast Checker indica conformidad en botones y textos principales.</td>
+                    </tr>
+                    <tr>
+                        <td>Operable</td>
+                        <td>Navegación por teclado y foco visible.</td>
+                        <td>AA</td>
+                        <td>Orden lógico de tabulación y foco resaltado en componentes interactivos.</td>
+                        <td>Menú, formularios y modales controlables con teclado.</td>
+                    </tr>
+                    <tr>
+                        <td>Comprensible</td>
+                        <td>Contenido y formularios claros y predecibles.</td>
+                        <td>AA</td>
+                        <td>Etiquetas asociadas, mensajes de error claros y textos explicativos.</td>
+                        <td>Lenguaje simple y jerarquía visual consistente.</td>
+                    </tr>
+                    <tr>
+                        <td>Robusto</td>
+                        <td>Compatibilidad con tecnologías de apoyo.</td>
+                        <td>AA</td>
+                        <td>Uso de roles ARIA en navegación, modales y tabs.</td>
+                        <td>Probado con lector NVDA en flujo principal.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Herramientas utilizadas</h3>
+            <ul>
+                <li>WAVE Web Accessibility Evaluation Tool.</li>
+                <li>Chrome DevTools – Lighthouse (sección Accessibility).</li>
+                <li>NVDA como lector de pantalla para pruebas manuales.</li>
+            </ul>
+            <h3>Capturas simuladas</h3>
+            <ul>
+                <li>Captura 1: Informe de Lighthouse con puntuación ≥ 95 en accesibilidad.</li>
+                <li>Captura 2: Panel de WAVE sin errores críticos en la home.</li>
+                <li>Captura 3: Enfoque de teclado visible en navbar y botones principales.</li>
+            </ul>
+        </section>
+        <section id="usabilidad">
+            <h2>Usabilidad y experiencia de usuario</h2>
+            <h3>Resultados del análisis</h3>
+            <p>
+                Se aplica una evaluación heurística ligera basada en las heurísticas de Nielsen y en patrones de diseño
+                habituales en e-commerce musical.
+            </p>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>Valoración</th>
+                        <th>Ejemplos y comentarios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Claridad de navegación</td>
+                        <td>Alta</td>
+                        <td>Navbar fija, categorías claras (Acústicas, Electrónicas, Platos, Accesorios).</td>
+                    </tr>
+                    <tr>
+                        <td>Consistencia visual</td>
+                        <td>Alta</td>
+                        <td>Uso consistente de colores, tipografía y estilos de tarjetas.</td>
+                    </tr>
+                    <tr>
+                        <td>Feedback al usuario</td>
+                        <td>Media-alta</td>
+                        <td>Animaciones suaves en hover, mensajes en formularios y estados activos.</td>
+                    </tr>
+                    <tr>
+                        <td>Control y libertad</td>
+                        <td>Media</td>
+                        <td>Cierre claro de modales y posibilidad de cancelar acciones.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Mejoras propuestas</h3>
+            <ul>
+                <li>Añadir historial reciente de productos vistos para facilitar comparación.</li>
+                <li>Integrar filtros avanzados por marca, diámetro, material y rango de precio.</li>
+                <li>Incorporar valoraciones y reseñas verificadas de usuarios.</li>
+            </ul>
+        </section>
+        <section id="seo">
+            <h2>SEO técnico y de contenidos</h2>
+            <h3>Keywords objetivo</h3>
+            <ul>
+                <li>baterías acústicas para principiantes</li>
+                <li>baterías electrónicas profesionales</li>
+                <li>tienda online de baterías y percusión</li>
+                <li>platos para batería</li>
+                <li>baquetas y accesorios de percusión</li>
+            </ul>
+            <h3>Ejemplos de titles y descriptions</h3>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Página</th>
+                        <th>Title</th>
+                        <th>Meta description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Home</td>
+                        <td>DrumStore Pro · Tienda online de baterías y percusión</td>
+                        <td>Compra baterías acústicas y electrónicas, platos y accesorios de percusión con asesoramiento para principiantes y profesionales.</td>
+                    </tr>
+                    <tr>
+                        <td>Catálogo</td>
+                        <td>Baterías acústicas y electrónicas · DrumStore Pro</td>
+                        <td>Explora nuestro catálogo de baterías, platos y accesorios con filtros por nivel, precio y estilo musical.</td>
+                    </tr>
+                    <tr>
+                        <td>Detalle de producto</td>
+                        <td>Kit de batería acústica para principiantes · DrumStore Pro</td>
+                        <td>Kit completo con casco de abedul, herrajes incluidos y set de platos ideal para comenzar a tocar batería.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Schema.org y sitemap</h3>
+            <p>
+                Se incluye marcado JSON-LD tipo WebSite y Product para mejorar la interpretación de la tienda por parte
+                de los motores de búsqueda, así como un archivo sitemap.xml con las URLs principales y una política
+                mobile-first.
+            </p>
+        </section>
+        <section id="incidencias">
+            <h2>Incidencias y decisiones de diseño</h2>
+            <ul>
+                <li>Ajuste de contraste en botones primarios para cumplir WCAG 2.1 AA.</li>
+                <li>Simplificación del formulario para reducir la carga cognitiva en móviles.</li>
+                <li>Optimización de recursos multimedia tras revisar la puntuación de rendimiento en Lighthouse.</li>
+            </ul>
+        </section>
+        <section id="conclusiones">
+            <h2>Conclusiones</h2>
+            <p>
+                DrumStore Pro se plantea como un ejemplo completo de proyecto de interfaz web centrado en la venta de
+                instrumentos de percusión. La combinación de Bootstrap 5.3, SASS y JavaScript permite construir una
+                experiencia responsive moderna, mientras que la atención a accesibilidad, usabilidad y SEO sitúa el
+                proyecto en un contexto profesional y aplicable a proyectos reales de e-commerce.
+            </p>
+        </section>
+        <section id="webgrafia">
+            <h2>Webgrafía</h2>
+            <ul>
+                <li>Documentación oficial de Bootstrap 5.3.</li>
+                <li>WCAG 2.1 Web Content Accessibility Guidelines.</li>
+                <li>Guías de SEO de Google Search Central.</li>
+                <li>Pattern libraries de e-commerce de referencia (Thomann, Sweetwater).</li>
+            </ul>
+        </section>
+        <section id="anexo1">
+            <h2>Anexo 1 · Buenas prácticas multimedia</h2>
+            <h3>Licencias y bancos de recursos</h3>
+            <ul>
+                <li>Uso de recursos con licencia libre o Creative Commons (p. ej. Unsplash, Pexels).</li>
+                <li>Verificación de atribución obligatoria en cada recurso utilizado.</li>
+                <li>Mantener un inventario de recursos con autor, URL y tipo de licencia.</li>
+            </ul>
+            <h3>Formatos y optimización</h3>
+            <ul>
+                <li>Imágenes: WebP para navegadores modernos y fallback JPG/PNG.</li>
+                <li>Vídeo: MP4 (H.264) equilibrando calidad/peso.</li>
+                <li>Audio: MP3 con bitrate moderado.</li>
+                <li>SVG: ideal para logotipos e iconografía escalable.</li>
+            </ul>
+            <h3>Lazy loading, CDN y SEO multimedia</h3>
+            <ul>
+                <li>Aplicar lazy loading en imágenes no críticas y vídeos embebidos.</li>
+                <li>Usar CDN para librerías comunes como Bootstrap y fuentes web.</li>
+                <li>Incluir textos alternativos descriptivos y nombres de archivo significativos.</li>
+            </ul>
+        </section>
+        <section id="anexo2">
+            <h2>Anexo 2 · Rúbrica de accesibilidad detallada</h2>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Criterio WCAG</th>
+                        <th>Nivel</th>
+                        <th>Evidencias en DrumStore Pro</th>
+                        <th>Observaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.1.1 Contenido no textual</td>
+                        <td>AA</td>
+                        <td>Imágenes de producto con alt descriptivo; iconos decorativos marcados adecuadamente.</td>
+                        <td>Revisar alt cuando se añadan nuevos productos.</td>
+                    </tr>
+                    <tr>
+                        <td>1.3.1 Información y relaciones</td>
+                        <td>AA</td>
+                        <td>Uso de encabezados anidados, listas y tablas semánticas.</td>
+                        <td>Evitar usar solo estilos visuales para indicar jerarquía.</td>
+                    </tr>
+                    <tr>
+                        <td>2.1.1 Teclado</td>
+                        <td>AA</td>
+                        <td>Navbar, formularios, carrusel y modales accesibles con teclado.</td>
+                        <td>Controlar foco al abrir/cerrar modales.</td>
+                    </tr>
+                    <tr>
+                        <td>2.4.3 Orden del foco</td>
+                        <td>AA</td>
+                        <td>Orden de tabulación coherente con el orden visual.</td>
+                        <td>Comprobar tras cambios de layout.</td>
+                    </tr>
+                    <tr>
+                        <td>3.3.1 Identificación de errores</td>
+                        <td>AA</td>
+                        <td>Mensajes de error junto a los campos en formularios.</td>
+                        <td>Posible mejora con resúmenes de error al inicio del formulario.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="anexo3">
+            <h2>Anexo 3 · Rúbrica de usabilidad</h2>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Dimensión</th>
+                        <th>Valoración</th>
+                        <th>Evidencias</th>
+                        <th>Observaciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Estructura de la información</td>
+                        <td>4/5</td>
+                        <td>Secciones claras; breadcrumbs en catálogo y detalle.</td>
+                        <td>Posible mejora: añadir un buscador interno avanzado.</td>
+                    </tr>
+                    <tr>
+                        <td>Aprendibilidad</td>
+                        <td>5/5</td>
+                        <td>Patrones estándar de e-commerce; etiquetas claras y autoexplicativas.</td>
+                        <td>Interfaz familiar para usuarios de tiendas online.</td>
+                    </tr>
+                    <tr>
+                        <td>Eficiencia</td>
+                        <td>4/5</td>
+                        <td>Flujo directo a producto y carrito simplificado.</td>
+                        <td>Añadir filtros guardados mejoraría la eficiencia para usuarios avanzados.</td>
+                    </tr>
+                    <tr>
+                        <td>Satisfacción</td>
+                        <td>4/5</td>
+                        <td>Uso de imágenes grandes, demo de sonido y vídeos.</td>
+                        <td>Posible incorporación de modo oscuro para entornos con poca luz.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="anexo4">
+            <h2>Anexo 4 · Detalles SEO</h2>
+            <h3>URLs y slugs</h3>
+            <ul>
+                <li>/baterias-acusticas</li>
+                <li>/baterias-electronicas</li>
+                <li>/platos</li>
+                <li>/baquetas-accesorios</li>
+                <li>/producto/kit-bateria-acustica-principiantes</li>
+            </ul>
+            <h3>Ejemplos de ALT</h3>
+            <ul>
+                <li>Kit de batería acústica de arce con platos incluidos para principiantes.</li>
+                <li>Batería electrónica compacta con pads de goma silenciosos.</li>
+                <li>Juego de platos de bronce para rock y metal.</li>
+            </ul>
+        </section>
+        <section id="anexo5">
+            <h2>Anexo 5 · Guion de exposición y checklist</h2>
+            <h3>Guion para exposición oral</h3>
+            <ol>
+                <li>Presentación del proyecto y contexto de DrumStore Pro.</li>
+                <li>Explicación de objetivos, público objetivo y alcance.</li>
+                <li>Recorrido por la guía de estilos y decisiones visuales.</li>
+                <li>Demostración de la interfaz: home, catálogo, detalle y contacto.</li>
+                <li>Ejemplos de multimedia, animaciones y canvas.</li>
+                <li>Resumen de accesibilidad, usabilidad y métricas clave.</li>
+                <li>Estrategia SEO aplicada y resultados esperados.</li>
+                <li>Conclusiones y posibles líneas de mejora futura.</li>
+            </ol>
+            <h3>Checklist final</h3>
+            <ul class="lista-check">
+                <li>Planificación completada con objetivos, alcance y cronograma.</li>
+                <li>Tablero de trabajo definido (Trello) con tareas reales.</li>
+                <li>Estructura de carpetas creada según requisitos.</li>
+                <li>Interfaz implementada con Bootstrap 5.3 y diseño responsive.</li>
+                <li>CSS personalizado y SASS con custom.min.css generado.</li>
+                <li>Multimedia integrada: imágenes, vídeo, audio, SVG y favicon.</li>
+                <li>Componentes interactivos: carrusel, tabs, sliders, tooltips y modales.</li>
+                <li>Accesibilidad validada frente a WCAG 2.1 (nivel AA orientativo).</li>
+                <li>Análisis de usabilidad con mejoras propuestas documentadas.</li>
+                <li>SEO on-page y técnico aplicado (metas, schema, sitemap).</li>
+                <li>Memoria lista para exportar a PDF con portada e índice.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
+

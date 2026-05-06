@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Memoria DrumStore Pro</title>
+
+        <meta name="description"
+            content="Memoria técnica del proyecto DrumStore Pro - Interfaz web responsive">
+        <meta name="author" content="Manuel Garcia Rodriguez">
+
+        <style>
+
+:root {
+    color-scheme: light dark;
+    --color-primario: #ff6b35;
+    --color-oscuro: #111827;
+    --color-claro: #f9fafb;
+    --color-secundario: #1f2933;
+    --color-acento: #22c55e;
+    --color-borde: #d1d5db;
+    --color-texto: #111827;
+    --color-texto-suave: #4b5563;
+    --font-base: system-ui, sans-serif;
+    --font-mono: monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-base);
+    color: var(--color-texto);
+    background: white;
+}
+
+.page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 24mm 20mm 20mm 24mm;
+}
+
+.page-header {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 210mm;
+    padding: 8mm 20mm 4mm 24mm;
+    border-bottom: 1px solid var(--color-borde);
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--color-texto-suave);
+    background: white;
+}
+
+.page-footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 210mm;
+    padding: 4mm 20mm 8mm 24mm;
+    border-top: 1px solid var(--color-borde);
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--color-texto-suave);
+    background: white;
+}
+
+.page-number::after {
+    counter-increment: page;
+    content: "Página " counter(page);
+}
+
+main {
+    counter-reset: page;
+}
+
+h1, h2, h3 {
+    color: var(--color-oscuro);
+}
+
+h1 {
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 32px;
+    border-left: 4px solid var(--color-primario);
+    padding-left: 8px;
+}
+
+h3 {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+p, li {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--color-texto-suave);
+}
+
+.portada {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.portada-pill {
+    background: var(--color-primario);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    width: fit-content;
+}
+
+.portada-titulo {
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+.portada-subtitulo {
+    font-size: 14px;
+    letter-spacing: 0.15em;
+    color: var(--color-texto-suave);
+}
+
+.panel {
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 12px;
+    background: var(--color-claro);
+}
+
+.panel-destacado {
+    border-color: var(--color-primario);
+    background: #fff7ed;
+}
+
+.panel-titulo {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--color-texto-suave);
+    margin-bottom: 4px;
+}
+
+.portada-meta {
+    font-size: 12px;
+}
+
+.portada-meta-row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 4px;
+}
+
+.portada-meta-label {
+    font-weight: 600;
+    width: 90px;
+}
+
+.indice {
+    columns: 2;
+    font-size: 13px;
+}
+
+.indice a {
+    text-decoration: none;
+    color: var(--color-texto-suave);
+}
+
+.indice-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin: 12px 0;
+}
+
+.tabla th,
+.tabla td {
+    border: 1px solid var(--color-borde);
+    padding: 6px;
+}
+
+.tabla th {
+    background: #f3f4f6;
+}
+
+.codigo {
+    background: #111827;
+    color: #e5e7eb;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-family: var(--font-mono);
+}
+
+.lista-check {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-check li::before {
+    content: "✔ ";
+    color: var(--color-acento);
+    font-weight: bold;
+}
+
+@page {
+    size: A4;
+    margin: 20mm 15mm;
+}
+
+@media print {
+    .page {
+        margin: 0;
+    }
+}
+
+</style>
+
+    </head>
+
+    <body>
+
+        <header class="page-header">
+            <div>DrumStore Pro · Interfaz Web</div>
+            <div>Memoria del proyecto</div>
+        </header>
+
+        <footer class="page-footer">
+            <div>Diseño de Interfaces Web · 2º DAW</div>
+            <div class="page-number"></div>
+        </footer>
+
+        <main class="page">
+
+            <!-- PORTADA -->
+
+            <section class="portada">
+
+                <div class="portada-pill">DrumStore Pro</div>
+
+                <div class="portada-subtitulo">Memoria técnica</div>
+
+                <h1 class="portada-titulo">
+                    Interfaz web responsive para tienda online de baterías y
+                    percusión
+                </h1>
+
+                <div class="panel panel-destacado">
+                    <div class="panel-titulo">Resumen</div>
+                    <p>
+                        Proyecto académico centrado en el diseño y desarrollo de
+                        una interfaz web
+                        orientada a la venta de instrumentos de percusión. Se ha
+                        trabajado la
+                        planificación, el diseño visual, la accesibilidad, la
+                        usabilidad y el SEO.
+                    </p>
+                </div>
+
+                <div class="portada-meta">
+
+                    <div class="portada-meta-row">
+                        <span class="portada-meta-label">Autor</span>
+                        <span>Manuel García Rodríguez</span>
+                    </div>
+
+                    <div class="portada-meta-row">
+                        <span class="portada-meta-label">Módulo</span>
+                        <span>Diseño de Interfaces Web</span>
+                    </div>
+
+                    <div class="portada-meta-row">
+                        <span class="portada-meta-label">Curso</span>
+                        <span>2º DAW</span>
+                    </div>
+
+                    <div class="portada-meta-row">
+                        <span class="portada-meta-label">Fecha</span>
+                        <span>Febrero 2026</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ÍNDICE -->
+
+            <section>
+
+                <h2>Índice</h2>
+
+                <div class="indice">
+
+                    <div class="indice-item"><a href="#intro">1
+                            Introducción</a><span>3</span></div>
+                    <div class="indice-item"><a href="#plan">2
+                            Planificación</a><span>4</span></div>
+                    <div class="indice-item"><a href="#dev">3
+                            Desarrollo</a><span>7</span></div>
+                    <div class="indice-item"><a href="#acc">4
+                            Accesibilidad</a><span>11</span></div>
+                    <div class="indice-item"><a href="#usa">5
+                            Usabilidad</a><span>14</span></div>
+                    <div class="indice-item"><a href="#seo">6
+                            SEO</a><span>17</span></div>
+                    <div class="indice-item"><a href="#conc">7
+                            Conclusiones</a><span>20</span></div>
+
+                </div>
+
+            </section>
+
+            <!-- INTRODUCCIÓN -->
+
+            <section id="intro">
+
+                <h2>Introducción</h2>
+
+                <h3>Contexto</h3>
+
+                <p>
+                    DrumStore Pro es una tienda online ficticia especializada en
+                    productos de
+                    percusión. El proyecto se desarrolla como ejercicio práctico
+                    del módulo
+                    de Diseño de Interfaces Web.
+                </p>
+
+                <h3>Objetivos</h3>
+
+                <ul>
+                    <li>Diseñar una interfaz clara y accesible.</li>
+                    <li>Aplicar buenas prácticas de maquetación.</li>
+                    <li>Optimizar la experiencia en dispositivos móviles.</li>
+                    <li>Trabajar SEO básico y estructura semántica.</li>
+                </ul>
+
+            </section>
+
+            <!-- PLANIFICACIÓN -->
+
+            <section id="plan">
+
+                <h2>Planificación</h2>
+
+                <p>
+                    El proyecto se ha dividido en varias fases: análisis,
+                    diseño,
+                    implementación, validación y documentación.
+                </p>
+
+                <table class="tabla">
+
+                    <tr>
+                        <th>Fase</th>
+                        <th>Contenido</th>
+                    </tr>
+
+                    <tr>
+                        <td>Análisis</td>
+                        <td>Definición de objetivos y público</td>
+                    </tr>
+
+                    <tr>
+                        <td>Diseño</td>
+                        <td>Wireframes y guía visual</td>
+                    </tr>
+
+                    <tr>
+                        <td>Implementación</td>
+                        <td>HTML, CSS y Bootstrap</td>
+                    </tr>
+
+                    <tr>
+                        <td>Validación</td>
+                        <td>Accesibilidad y pruebas</td>
+                    </tr>
+
+                </table>
+
+            </section>
+
+            <!-- DESARROLLO -->
+
+            <section id="dev">
+
+                <h2>Desarrollo</h2>
+
+                <h3>Estructura del proyecto</h3>
+
+                <div class="codigo">
+                    DrumStore-Pro/
+                    ├─ css/
+                    ├─ js/
+                    ├─ img/
+                    ├─ docs/
+                    └─ index.html
+                </div>
+
+                <h3>Herramientas</h3>
+
+                <ul>
+                    <li>HTML5 semántico</li>
+                    <li>Bootstrap 5.3</li>
+                    <li>CSS personalizado</li>
+                    <li>JavaScript básico</li>
+                </ul>
+
+            </section>
+
+            <!-- ACCESIBILIDAD -->
+
+            <section id="acc">
+
+                <h2>Accesibilidad</h2>
+
+                <p>
+                    Se ha trabajado el contraste, el uso correcto de etiquetas,
+                    la navegación por teclado y los textos alternativos.
+                </p>
+
+                <ul>
+                    <li>Foco visible</li>
+                    <li>Alt en imágenes</li>
+                    <li>Estructura de encabezados</li>
+                    <li>Formularios etiquetados</li>
+                </ul>
+
+            </section>
+
+            <!-- USABILIDAD -->
+
+            <section id="usa">
+
+                <h2>Usabilidad</h2>
+
+                <p>
+                    La interfaz sigue patrones habituales de comercio
+                    electrónico,
+                    facilitando la navegación y el proceso de búsqueda.
+                </p>
+
+                <ul>
+                    <li>Menú claro</li>
+                    <li>Categorías visibles</li>
+                    <li>Botones reconocibles</li>
+                    <li>Feedback visual</li>
+                </ul>
+
+            </section>
+
+            <!-- SEO -->
+
+            <section id="seo">
+
+                <h2>SEO</h2>
+
+                <p>
+                    Se han aplicado técnicas básicas de optimización para
+                    buscadores.
+                </p>
+
+                <ul>
+                    <li>Meta etiquetas</li>
+                    <li>Títulos jerárquicos</li>
+                    <li>URLs limpias</li>
+                    <li>Schema básico</li>
+                </ul>
+
+            </section>
+
+            <!-- CONCLUSIONES -->
+
+            <section id="conc">
+
+                <h2>Conclusiones</h2>
+
+                <p>
+                    El proyecto DrumStore Pro permite aplicar de forma práctica
+                    los conocimientos adquiridos en el módulo de DIW,
+                    desarrollando
+                    una interfaz moderna, accesible y preparada para entornos
+                    reales.
+                </p>
+
+                <h3>Checklist final</h3>
+
+                <ul class="lista-check">
+                    <li>Estructura completa</li>
+                    <li>Diseño responsive</li>
+                    <li>Accesibilidad validada</li>
+                    <li>SEO aplicado</li>
+                    <li>Documentación finalizada</li>
+                </ul>
+
+            </section>
+
+        </main>
+
+    </body>
+</html>
