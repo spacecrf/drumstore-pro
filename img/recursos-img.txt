@@ -1,0 +1,15 @@
+Coloca en esta carpeta las imágenes optimizadas utilizadas por DrumStore Pro.
+
+Ejemplos de archivos esperados:
+- hero-acustica.webp y hero-acustica.jpg
+- hero-electronica.webp y hero-electronica.jpg
+- hero-platos.webp y hero-platos.jpg
+- prod-acustica-01.webp y prod-acustica-01.jpg
+- prod-acustica-02.webp y prod-acustica-02.jpg
+- prod-electronica-01.webp y prod-electronica-01.jpg
+- prod-platos-01.webp y prod-platos-01.jpg
+- prod-baquetas-01.webp y prod-baquetas-01.jpg
+- modal-producto.webp y modal-producto.jpg
+- favicon-32.png y favicon-64.png
+- video-poster.jpg
+
