@@ -1,0 +1,5 @@
+Coloca en esta carpeta los archivos de vídeo optimizados en formato MP4.
+
+Ejemplos de archivos esperados:
+- demo-electronic-kit.mp4
+
