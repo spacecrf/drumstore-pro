@@ -1,0 +1,6 @@
+Coloca en esta carpeta los archivos de audio optimizados en formato MP3.
+
+Ejemplos de archivos esperados:
+- groove-acustica.mp3
+- fill-electronico.mp3
+
